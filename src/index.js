@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.less';
-import Parent from './page/demo/parent'
+import Admin from './admin';
 
 ReactDOM.render(
-  <Parent/>,
+  <Admin/>,
   document.getElementById('root')
 );
