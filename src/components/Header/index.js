@@ -11,7 +11,7 @@ export default class Header extends Component{
      
     render(){
         return(
-            <div>头部</div>
+            <div>this is header</div>
         )
     }
 }

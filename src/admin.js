@@ -2,6 +2,8 @@ import React,{Component} from 'react';
 import { Row, Col } from 'antd';
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Menu from "./components/Menu";
+import './style/common.less';
 
 class Admin extends Component{
     constructor(props){
@@ -13,16 +15,16 @@ class Admin extends Component{
 		
 		render(){
 			return(
-				<div>
-					<Row>
-						<Col span={3}>菜单</Col>
-						<Col span={21}>
-							<Header></Header>
-							<Row>内容</Row>
-							<Footer></Footer>
-						</Col>
-					</Row>
-				</div>
+				<Row className = "container">
+					<Col span={4} className = "Menu">
+						<Menu/>
+					</Col>
+					<Col span={20} className = "main">
+						<Header/>
+						<Row className = "content">content</Row>
+						<Footer/>
+					</Col>
+				</Row>
 			)
 		}
 
