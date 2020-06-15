@@ -5,7 +5,7 @@ import "./index.less"
 
 const { SubMenu } = Menu;
 class NavLeft extends Component{
-		组件挂载前
+		// 组件挂载前
     componentWillMount(){
 			const menuTreeNode = this.renderMenu(MenuConfig);
 			// 把数据存起来
@@ -15,19 +15,19 @@ class NavLeft extends Component{
 		}
 		// 菜单渲染(递归函数)
 		renderMenu = (data)=>{
-			return data.map((item)=>{
+		 return data.map((item)=>{
 				if(item.children){
 						return (
 							<SubMenu key={item.key} title={item.title}>
 								{this.renderMenu(item.children)}
 							</SubMenu>
 				)}
-				return <Menu.item title = {item.title} key = {item.key}>
-						        {item.title}
-								</Menu.item>
+				return (<Menu.Item  key = {item.key}>
+								{item.title}
+								</Menu.Item>)
 		})
 	}
-
+	
     render(){
         return(
             <div>
@@ -36,8 +36,8 @@ class NavLeft extends Component{
                     <h1>Imooc MS</h1>
                 </div>
                 <Menu theme = "dark">
-										{this.state.menuTreeNode}
-                </Menu>
+									{this.state.menuTreeNode}
+							  </Menu>
             </div>
         )
     }
