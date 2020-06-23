@@ -1,12 +1,13 @@
 import React,{Component} from "react";
 import MenuConfig from './../../config/menuConfig';
 import {Menu} from "antd";
+import { Link } from 'react-router-dom';
 import "./index.less"
 
 const { SubMenu } = Menu;
 class NavLeft extends Component{
 		// 组件挂载前
-    componentWillMount(){
+    componentDidMount(){
 			const menuTreeNode = this.renderMenu(MenuConfig);
 			// 把数据存起来
 			this.setState({
@@ -23,6 +24,7 @@ class NavLeft extends Component{
 							</SubMenu>
 				)}
 				return (<Menu.Item  key = {item.key}>
+									<Link to={item.key}>{item.title}</Link>
 								{item.title}
 								</Menu.Item>)
 		})

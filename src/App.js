@@ -1,12 +1,14 @@
 import React from 'react';
-import './App.css';
+import './App.less';
 
-function App() {
-  return (
-    <div className="App">
-      
-    </div>
-  );
+export default class App extends React.Component {
+
+  render(){
+      return (
+        <div>
+          {this.props.children}
+        </div>
+      );
+  }
+
 }
-
-export default App;
